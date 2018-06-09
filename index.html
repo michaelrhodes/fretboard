@@ -1,0 +1,110 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<link href="data:image/x-icon;base64," rel="icon">
+<style>
+  html,
+  body {
+    box-sizing: border-box;
+    font: 700 16px/1 sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0.5em;
+    width: 100%;
+  }
+  .fretboard {
+    overflow: auto;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+  }
+  .fretboard .content {
+    border: 2px solid #000;
+    border-radius: 4px;
+    counter-reset: fret;
+    display: table;
+    margin-bottom: 2em;
+    table-layout: fixed;
+  }
+  .nut, .fret {
+    border-left: 1px solid #ddd;
+    display: table-cell;
+  }
+  .fret {
+    position: relative
+  }
+  .fret:before {
+    bottom: -2em;
+    content: counter(fret);
+    counter-increment: fret;
+    font-size: 10px;
+    left: 0;
+    letter-spacing: 0.02em;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .fret[data-number="3"]:after,
+  .fret[data-number="5"]:after,
+  .fret[data-number="7"]:after,
+  .fret[data-number="9"]:after,
+  .fret[data-number="12"]:after,
+  .fret[data-number="15"]:after,
+  .fret[data-number="17"]:after,
+  .fret[data-number="19"]:after,
+  .fret[data-number="21"]:after {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    content: '';
+    height: 16px;
+    left: 50%;
+    margin: -8px 0 0 -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+  }
+  .nut {
+    background-color: #000;
+    color: #fff;
+  }
+  .nut, .nut + .fret {
+    border-left: none;
+  }
+  .note {
+    border-top: 1px solid #f0f0f0;
+    padding: 0.75em;
+  }
+  .note.dimmed .name,
+  .note.dimmed .octave {
+    color: #000;
+    opacity: 0.1;
+  }
+  .nut .note {
+    border-color: #000;
+  }
+  .nut .note.dimmed .name,
+  .nut .note.dimmed .octave {
+    color: #fff;
+    opacity: 0.3
+  }
+  .note:first-child {
+    border-top: none;
+  }
+  .note .octave {
+    color: #999;
+    margin-right: -0.125em;
+  }
+  select {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    font: inherit;
+    margin: 0.5em 0;
+    padding: 0.75em 1em;
+  }
+  select:focus {
+    outline: none;
+  }
+</style>
+<body>
+  <script src="bundle.js"></script>
+</body>
