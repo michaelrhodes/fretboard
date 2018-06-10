@@ -9,7 +9,8 @@
     height: 100%;
     margin: 0;
     overflow: hidden;
-    padding: 0.5em;
+    padding: 0.5em 0.333em 0.333em;
+    -webkit-user-select: none;
     width: 100%;
   }
   .fretboard {
@@ -93,16 +94,23 @@
     color: #999;
     margin-right: -0.125em;
   }
+  select, .pitches {
+    margin: 0 0 0.75em;
+    padding: 0 0.75em;
+  }
   select {
     -webkit-appearance: none;
     border: none;
     border-radius: 0;
     font: inherit;
-    margin: 0.5em 0;
-    padding: 0.75em 1em;
   }
   select:focus {
     outline: none;
+  }
+  .pitches {
+    display: inline-block;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
   }
 </style>
 <body>
